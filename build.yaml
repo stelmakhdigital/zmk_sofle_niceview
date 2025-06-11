@@ -11,11 +11,17 @@
 #   - board: nice_nano_v2
 #     shield: reviung41
 #
+# ---
+# include:
+#   - board: nice_nano_v2
+#     shield: sofle_left nice_view_adapter nice_view
+#   - board: nice_nano_v2 
+#     shield: sofle_right nice_view_adapter nice_view
+#   - board: nice_nano_v2
+#     shield: settings_reset
 ---
 include:
   - board: nice_nano_v2
-    shield: sofle_left nice_view_adapter nice_view
-  - board: nice_nano_v2 
-    shield: sofle_right nice_view_adapter nice_view
+    shield: sofle_left
   - board: nice_nano_v2
-    shield: settings_reset
+    shield: sofle_right
