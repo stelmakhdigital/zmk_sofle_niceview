@@ -140,6 +140,13 @@
             timeout-ms = <25>;
             layers = <0>;
         };
+
+        CAPSLO {
+            bindings = <&kp CLCK>;
+            key-positions = <12 24>;
+            layers = <0>;
+            timeout-ms = <100>;
+        };
     };
 
     keymap {
@@ -156,11 +163,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE                &kp N1          &kp N2          &kp N3        &kp N4            &kp N5                                    &kp N6     &kp N7             &kp N8       &kp N9           &kp N0              &kp MINUS
-&kp TAB                  &kp Q           &kp W           &kp E         &kp R             &kp T                                     &kp Y      &kp U              &kp I        &kp O            &kp P               &kp EQUAL
-&mt CAPSLOCK LEFT_SHIFT  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LCTRL D   &mt LEFT_SHIFT F  &kp G                                     &kp H      &mt RIGHT_SHIFT J  &mt RCTRL K  &mt RIGHT_ALT L  &mt RIGHT_GUI SEMI  &mt RIGHT_SHIFT SQT
-&kp LCTRL                &kp Z           &kp X           &kp C         &kp V             &kp B      &kp C_MUTE    &rgb_ug RGB_TOG  &kp N      &kp M              &kp COMMA    &kp DOT          &kp FSLH            &mt RCTRL BACKSLASH
-                                         &kp ESCAPE      &kp LEFT_GUI  &kp DELETE        &mo LOWER  &kp SPACE     &kp ENTER        &mo RAISE  &kp BACKSPACE      &kp RGUI     &kp RIGHT_ALT
+&kp GRAVE       &kp N1  &kp N2      &kp N3        &kp N4      &kp N5                                    &kp N6     &kp N7         &kp N8     &kp N9         &kp N0    &kp MINUS
+&kp TAB         &kp Q   &kp W       &kp E         &kp R       &kp T                                     &kp Y      &kp U          &kp I      &kp O          &kp P     &kp EQUAL
+&kp LEFT_SHIFT  &kp A   &kp S       &kp D         &kp F       &kp G                                     &kp H      &kp J          &kp K      &kp L          &kp SEMI  &mt RIGHT_SHIFT SQT
+&kp LCTRL       &kp Z   &kp X       &kp C         &kp V       &kp B      &kp C_MUTE    &rgb_ug RGB_TOG  &kp N      &kp M          &kp COMMA  &kp DOT        &kp FSLH  &mt RCTRL BACKSLASH
+                        &kp ESCAPE  &kp LEFT_GUI  &kp DELETE  &mo LOWER  &kp SPACE     &kp ENTER        &mo RAISE  &kp BACKSPACE  &kp RGUI   &kp RIGHT_ALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -199,11 +206,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &trans      &trans     &trans       &trans       &trans                    &trans     &trans    &trans    &trans     &trans   &trans
-&trans  &kp INS     &kp PSCRN  &kp K_CMENU  &trans       &trans                    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp N0   &trans
-&trans  &trans      &trans     &trans       &trans       &trans                    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&trans  &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans  &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
-                    &trans     &trans       &trans       &trans  &trans    &trans  &trans     &trans    &trans    &trans
+&trans        &trans      &trans     &trans       &trans       &trans                    &trans     &trans    &trans    &trans     &trans   &trans
+&trans        &kp INS     &kp PSCRN  &kp K_CMENU  &trans       &trans                    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp N0   &trans
+&kp CAPSLOCK  &trans      &trans     &trans       &trans       &trans                    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
+&trans        &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans  &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
+                          &trans     &trans       &trans       &trans  &trans    &trans  &trans     &trans    &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
