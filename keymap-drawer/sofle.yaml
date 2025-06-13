@@ -1,7 +1,66 @@
 layout: {zmk_keyboard: sofle}
 layers:
-  default: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', TAB, Q, W, E, R, T, Y, U, I, O, P, \, LEFT SHIFT, A, S, D, F, G, H, J, K, L, ;, '''', LCTRL,
-    Z, X, C, V, B, MUTE, RGB TOG, N, M, ',', ., /, RCTRL, LGUI, DELETE, LEFT ALT, lower, SPACE, ENTER, raise, ENTER, BACKSPACE, RGUI]
+  default:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - '='
+  - LEFT SHIFT
+  - {t: A, h: LEFT GUI}
+  - {t: S, h: LEFT ALT}
+  - {t: D, h: LCTRL}
+  - {t: F, h: LEFT SHIFT}
+  - G
+  - H
+  - {t: J, h: RIGHT SHIFT}
+  - {t: K, h: RCTRL}
+  - {t: L, h: RIGHT ALT}
+  - {t: ;, h: RIGHT GUI}
+  - ''''
+  - LCTRL
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - MUTE
+  - RGB TOG
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - \
+  - LGUI
+  - LEFT GUI
+  - DELETE
+  - lower
+  - SPACE
+  - ENTER
+  - raise
+  - BACKSPACE
+  - RGUI
+  - RGUI
   lower:
   - {t: ▽, type: trans}
   - F1
@@ -185,3 +244,34 @@ layers:
   - ''
   - ''
   - ''
+combos:
+- p: [0, 12]
+  k: ESC
+- p: [23, 35]
+  k: '~'
+- p: [35, 49]
+  k: '`'
+- p: [2, 3]
+  k: +
+- p: [3, 4]
+  k: '-'
+- p: [17, 16]
+  k: (
+- p: [4, 5]
+  k: ','
+- p: [29, 28]
+  k: '['
+- p: [41, 40]
+  k: '{'
+- p: [18, 19]
+  k: )
+- p: [30, 31]
+  k: ']'
+- p: [44, 45]
+  k: '}'
+- p: [7, 8]
+  k: _
+- p: [6, 7]
+  k: .
+- p: [9, 8]
+  k: '|'
