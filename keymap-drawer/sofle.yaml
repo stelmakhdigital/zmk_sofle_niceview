@@ -25,17 +25,17 @@ layers:
   - O
   - P
   - '='
-  - {t: LEFT SHIFT, h: CAPSLOCK}
-  - {t: A, h: LEFT GUI}
-  - {t: S, h: LEFT ALT}
-  - {t: D, h: LCTRL}
-  - {t: F, h: LEFT SHIFT}
+  - LEFT SHIFT
+  - A
+  - S
+  - D
+  - F
   - G
   - H
-  - {t: J, h: RIGHT SHIFT}
-  - {t: K, h: RCTRL}
-  - {t: L, h: RIGHT ALT}
-  - {t: ;, h: RIGHT GUI}
+  - J
+  - K
+  - L
+  - ;
   - {t: '''', h: RIGHT SHIFT}
   - LCTRL
   - Z
@@ -147,7 +147,7 @@ layers:
   - END
   - '0'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - CAPSLOCK
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -289,4 +289,7 @@ combos:
   l: [default]
 - p: [9, 8]
   k: '|'
+  l: [default]
+- p: [12, 24]
+  k: CLCK
   l: [default]
