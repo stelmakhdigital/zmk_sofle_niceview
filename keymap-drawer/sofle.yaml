@@ -25,7 +25,7 @@ layers:
   - O
   - P
   - '='
-  - LEFT SHIFT
+  - {t: LEFT SHIFT, h: CAPSLOCK}
   - {t: A, h: LEFT GUI}
   - {t: S, h: LEFT ALT}
   - {t: D, h: LCTRL}
@@ -36,7 +36,7 @@ layers:
   - {t: K, h: RCTRL}
   - {t: L, h: RIGHT ALT}
   - {t: ;, h: RIGHT GUI}
-  - ''''
+  - {t: '''', h: RIGHT SHIFT}
   - LCTRL
   - Z
   - X
@@ -50,7 +50,7 @@ layers:
   - ','
   - .
   - /
-  - \
+  - {t: \, h: RCTRL}
   - LGUI
   - LEFT GUI
   - DELETE
@@ -123,12 +123,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   raise:
-  - BT CLR
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -142,17 +142,17 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - PG UP
-  - {t: ▽, type: trans}
+  - HOME
   - UP
-  - {t: ▽, type: trans}
+  - END
   - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LALT
-  - LCTRL
-  - LSHFT
   - {t: ▽, type: trans}
-  - CLCK
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - PG DN
   - LEFT
   - DOWN
@@ -247,31 +247,46 @@ layers:
 combos:
 - p: [0, 12]
   k: ESC
+  l: [default]
 - p: [23, 35]
   k: '~'
+  l: [default]
 - p: [35, 49]
   k: '`'
+  l: [default]
 - p: [2, 3]
   k: +
+  l: [default]
 - p: [3, 4]
   k: '-'
+  l: [default]
 - p: [17, 16]
   k: (
+  l: [default]
 - p: [4, 5]
   k: ','
+  l: [default]
 - p: [29, 28]
   k: '['
+  l: [default]
 - p: [41, 40]
   k: '{'
+  l: [default]
 - p: [18, 19]
   k: )
+  l: [default]
 - p: [30, 31]
   k: ']'
+  l: [default]
 - p: [44, 45]
   k: '}'
+  l: [default]
 - p: [7, 8]
   k: _
+  l: [default]
 - p: [6, 7]
   k: .
+  l: [default]
 - p: [9, 8]
   k: '|'
+  l: [default]
