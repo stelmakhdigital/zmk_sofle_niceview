@@ -27,6 +27,86 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        EscKey {
+            bindings = <&kp ESC>;
+            key-positions = <0 12>;
+            timeout-ms = <100>;
+        };
+
+        TildaSign {
+            bindings = <&kp TILDE>;
+            key-positions = <23 35>;
+        };
+
+        GraveSign {
+            bindings = <&kp GRAVE>;
+            key-positions = <35 49>;
+        };
+
+        PlusSign {
+            bindings = <&kp PLUS>;
+            key-positions = <2 3>;
+        };
+
+        MinusSign {
+            bindings = <&kp MINUS>;
+            key-positions = <3 4>;
+        };
+
+        ParaLeft {
+            bindings = <&kp LPAR>;
+            key-positions = <17 16>;
+        };
+
+        CommaSign {
+            bindings = <&kp COMMA>;
+            key-positions = <4 5>;
+        };
+
+        BracketLeft {
+            bindings = <&kp LBKT>;
+            key-positions = <29 28>;
+        };
+
+        BraceLeft {
+            bindings = <&kp LBRC>;
+            key-positions = <41 40>;
+        };
+
+        ParaRight {
+            bindings = <&kp RPAR>;
+            key-positions = <18 19>;
+        };
+
+        BracketRight {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <30 31>;
+        };
+
+        BraceRight {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <44 45>;
+        };
+
+        UnderscoreSign {
+            bindings = <&kp UNDER>;
+            key-positions = <7 8>;
+        };
+
+        DotSign {
+            bindings = <&kp DOT>;
+            key-positions = <6 7>;
+        };
+
+        PipeSign {
+            bindings = <&kp PIPE>;
+            key-positions = <9 8>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -41,11 +121,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE       &kp N1  &kp N2    &kp N3      &kp N4        &kp N5                                    &kp N6     &kp N7         &kp N8         &kp N9    &kp N0    &kp EQUAL
-&kp TAB         &kp Q   &kp W     &kp E       &kp R         &kp T                                     &kp Y      &kp U          &kp I          &kp O     &kp P     &kp BACKSLASH
-&kp LEFT_SHIFT  &kp A   &kp S     &kp D       &kp F         &kp G                                     &kp H      &kp J          &kp K          &kp L     &kp SEMI  &kp SQT
-&kp LCTRL       &kp Z   &kp X     &kp C       &kp V         &kp B      &kp C_MUTE    &rgb_ug RGB_TOG  &kp N      &kp M          &kp COMMA      &kp DOT   &kp FSLH  &kp RCTRL
-                        &kp LGUI  &kp DELETE  &kp LEFT_ALT  &mo LOWER  &kp SPACE     &kp ENTER        &mo RAISE  &kp ENTER  &kp BACKSPACE  &kp RGUI
+&kp GRAVE       &kp N1          &kp N2          &kp N3        &kp N4            &kp N5                                    &kp N6     &kp N7             &kp N8       &kp N9           &kp N0              &kp MINUS
+&kp TAB         &kp Q           &kp W           &kp E         &kp R             &kp T                                     &kp Y      &kp U              &kp I        &kp O            &kp P               &kp EQUAL
+&kp LEFT_SHIFT  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LCTRL D   &mt LEFT_SHIFT F  &kp G                                     &kp H      &mt RIGHT_SHIFT J  &mt RCTRL K  &mt RIGHT_ALT L  &mt RIGHT_GUI SEMI  &kp SQT
+&kp LCTRL       &kp Z           &kp X           &kp C         &kp V             &kp B      &kp C_MUTE    &rgb_ug RGB_TOG  &kp N      &kp M              &kp COMMA    &kp DOT          &kp FSLH            &kp BACKSLASH
+                                &kp LGUI        &kp LEFT_GUI  &kp DELETE        &mo LOWER  &kp SPACE     &kp ENTER        &mo RAISE  &kp BACKSPACE      &kp RGUI     &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
