@@ -51,7 +51,7 @@ layers:
   - .
   - /
   - {t: \, h: RCTRL}
-  - LGUI
+  - ESCAPE
   - LEFT GUI
   - DELETE
   - lower
@@ -60,7 +60,7 @@ layers:
   - raise
   - BACKSPACE
   - RGUI
-  - RGUI
+  - RIGHT ALT
   lower:
   - {t: ▽, type: trans}
   - F1
