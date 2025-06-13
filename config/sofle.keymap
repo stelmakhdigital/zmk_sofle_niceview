@@ -34,76 +34,105 @@
             bindings = <&kp ESC>;
             key-positions = <0 12>;
             timeout-ms = <100>;
+            layers = <0>;
         };
 
         TildaSign {
             bindings = <&kp TILDE>;
             key-positions = <23 35>;
+            layers = <0>;
+            timeout-ms = <25>;
         };
 
         GraveSign {
             bindings = <&kp GRAVE>;
             key-positions = <35 49>;
+            layers = <0>;
+            timeout-ms = <25>;
         };
 
         PlusSign {
             bindings = <&kp PLUS>;
             key-positions = <2 3>;
+            layers = <0>;
+            timeout-ms = <25>;
         };
 
         MinusSign {
             bindings = <&kp MINUS>;
             key-positions = <3 4>;
+            timeout-ms = <25>;
+            layers = <0>;
         };
 
         ParaLeft {
             bindings = <&kp LPAR>;
             key-positions = <17 16>;
+            timeout-ms = <25>;
+            layers = <0>;
         };
 
         CommaSign {
             bindings = <&kp COMMA>;
             key-positions = <4 5>;
+            timeout-ms = <25>;
+            layers = <0>;
         };
 
         BracketLeft {
             bindings = <&kp LBKT>;
             key-positions = <29 28>;
+            timeout-ms = <25>;
+            layers = <0>;
         };
 
         BraceLeft {
             bindings = <&kp LBRC>;
             key-positions = <41 40>;
+            timeout-ms = <25>;
+            layers = <0>;
         };
 
         ParaRight {
             bindings = <&kp RPAR>;
             key-positions = <18 19>;
+            timeout-ms = <25>;
+            layers = <0>;
         };
 
         BracketRight {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <30 31>;
+            timeout-ms = <25>;
+            layers = <0>;
         };
 
         BraceRight {
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <44 45>;
+            layers = <0>;
+            timeout-ms = <25>;
         };
 
         UnderscoreSign {
             bindings = <&kp UNDER>;
             key-positions = <7 8>;
+            timeout-ms = <25>;
+            layers = <0>;
         };
 
         DotSign {
             bindings = <&kp DOT>;
             key-positions = <6 7>;
+            timeout-ms = <25>;
+            layers = <0>;
         };
 
         PipeSign {
             bindings = <&kp PIPE>;
             key-positions = <9 8>;
+            timeout-ms = <25>;
+            layers = <0>;
         };
     };
 
@@ -121,11 +150,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE       &kp N1          &kp N2          &kp N3        &kp N4            &kp N5                                    &kp N6     &kp N7             &kp N8       &kp N9           &kp N0              &kp MINUS
-&kp TAB         &kp Q           &kp W           &kp E         &kp R             &kp T                                     &kp Y      &kp U              &kp I        &kp O            &kp P               &kp EQUAL
-&kp LEFT_SHIFT  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LCTRL D   &mt LEFT_SHIFT F  &kp G                                     &kp H      &mt RIGHT_SHIFT J  &mt RCTRL K  &mt RIGHT_ALT L  &mt RIGHT_GUI SEMI  &kp SQT
-&kp LCTRL       &kp Z           &kp X           &kp C         &kp V             &kp B      &kp C_MUTE    &rgb_ug RGB_TOG  &kp N      &kp M              &kp COMMA    &kp DOT          &kp FSLH            &kp BACKSLASH
-                                &kp LGUI        &kp LEFT_GUI  &kp DELETE        &mo LOWER  &kp SPACE     &kp ENTER        &mo RAISE  &kp BACKSPACE      &kp RGUI     &kp RGUI
+&kp GRAVE                &kp N1          &kp N2          &kp N3        &kp N4            &kp N5                                    &kp N6     &kp N7             &kp N8       &kp N9           &kp N0              &kp MINUS
+&kp TAB                  &kp Q           &kp W           &kp E         &kp R             &kp T                                     &kp Y      &kp U              &kp I        &kp O            &kp P               &kp EQUAL
+&mt CAPSLOCK LEFT_SHIFT  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LCTRL D   &mt LEFT_SHIFT F  &kp G                                     &kp H      &mt RIGHT_SHIFT J  &mt RCTRL K  &mt RIGHT_ALT L  &mt RIGHT_GUI SEMI  &mt RIGHT_SHIFT SQT
+&kp LCTRL                &kp Z           &kp X           &kp C         &kp V             &kp B      &kp C_MUTE    &rgb_ug RGB_TOG  &kp N      &kp M              &kp COMMA    &kp DOT          &kp FSLH            &mt RCTRL BACKSLASH
+                                         &kp LGUI        &kp LEFT_GUI  &kp DELETE        &mo LOWER  &kp SPACE     &kp ENTER        &mo RAISE  &kp BACKSPACE      &kp RGUI     &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -164,11 +193,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans    &trans    &trans     &trans   &trans
-&trans      &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                          &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &trans
-&trans      &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK                        &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
-                          &trans        &trans        &trans        &trans        &trans    &trans  &trans     &trans    &trans    &trans
+&trans  &trans      &trans     &trans       &trans       &trans                    &trans     &trans    &trans    &trans     &trans   &trans
+&trans  &kp INS     &kp PSCRN  &kp K_CMENU  &trans       &trans                    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp N0   &trans
+&trans  &trans      &trans     &trans       &trans       &trans                    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
+&trans  &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans  &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
+                    &trans     &trans       &trans       &trans  &trans    &trans  &trans     &trans    &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
