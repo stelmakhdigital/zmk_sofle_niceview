@@ -27,12 +27,6 @@
         };
     };
 
-    &mt {
-        tapping-term-ms = <140>;
-        quick-tap-ms = <100>;
-    };
-
-
     combos {
         compatible = "zmk,combos";
 
