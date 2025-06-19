@@ -202,9 +202,9 @@ layers:
   - RGB SAD
   - RGB SAI
   - RGB EFF
-  - ''
-  - ''
-  - ''
+  - OUT TOG
+  - OUT USB
+  - OUT BLE
   - ''
   - ''
   - ''
