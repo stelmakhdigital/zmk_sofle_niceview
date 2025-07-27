@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-<layouts/josefadamcik/sofle.dtsi>
+#include <layouts/josefadamcik/sofle.dtsi>
 
 &physical_layout0 {
     transform = <&default_transform>;

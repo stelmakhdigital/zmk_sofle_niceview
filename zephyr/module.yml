@@ -1,0 +1,4 @@
+name: zmk-keyboard-sofle_keyboard_dongle
+build:
+  settings:
+    board_root: .
