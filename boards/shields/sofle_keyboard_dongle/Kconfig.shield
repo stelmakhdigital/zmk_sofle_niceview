@@ -1,3 +1,4 @@
 # No whitespace after the comma or in the keyboard name!
 config SHIELD_SOFLE_KEYBOARD_DONGLE
+    bool "Sofle Keyboard Dongle Shield"
     def_bool $(shields_list_contains,sofle_keyboard_dongle)

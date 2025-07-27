@@ -1,0 +1,5 @@
+zmk*
+zephyr/
+venv
+.west
+azoteq-input-module
