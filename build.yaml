@@ -22,7 +22,7 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: sofle_keyboard_dongle nice_view_adapter dongle_display_view_pro_micro azoteq_adapter_left
+    shield: sofle_dongle nice_view_adapter dongle_display_view_pro_micro azoteq_adapter_left
     cmake-args: -DZMK_CONFIG="./config" -DCONF_FILE="config/dongle.conf"
     # For peripheral boards, use the `cmake-args` property to set the split role
   - board: nice_nano_v2
