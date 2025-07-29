@@ -1,3 +1,4 @@
+## -----------------------------------------------------------------
 if SHIELD_SOFLE_DONGLE
 
 config ZMK_KEYBOARD_NAME
@@ -25,9 +26,15 @@ config ZMK_SLEEP
     default n
     
 endif ## SHIELD_SOFLE_DONGLE
+## -----------------------------------------------------------------
+if SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
 
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
 
-if SHIELD_SOFLE_DONGLE
+endif ## SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
+## -----------------------------------------------------------------
+if SHIELD_SOFLE_DONGLE || SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
 
 config ZMK_BLE
     default y
@@ -38,6 +45,7 @@ config ZMK_SPLIT
 config ZMK_SLEEP
     default y
     
+## ------------------
 config ZMK_DISPLAY
     default n
 
@@ -50,7 +58,25 @@ config SSD1306
     default y
 
 endif ## ZMK_DISPLAY
+## ------------------
+if LVGL
 
+config LV_Z_VDB_SIZE
+    default 64
+
+config LV_DPI_DEF
+    default 148  # Уменьшить, если элементы на дисплее слишком большие
+
+config LV_Z_BITS_PER_PIXEL
+    default 1  # 1 бит на пиксель - Ч\Б
+## -------
+choice LV_COLOR_DEPTH
+    default LV_COLOR_DEPTH_1  # Ч\Б
+
+endchoice
+## -------
+endif ## LVGL
+## ------------------
 config ZMK_RGB_UNDERGLOW
     default n
 
@@ -60,8 +86,9 @@ config ZMK_RGB_UNDERGLOW_EXT_POWER
 if ZMK_RGB_UNDERGLOW
 
 config WS2812_STRIP
-    default y
+    default n
 
 endif ## ZMK_RGB_UNDERGLOW
-
-endif ## SHIELD_SOFLE_DONGLE
+## ------------------
+endif ## SHIELD_SOFLE_DONGLE || SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
+## -----------------------------------------------------------------
