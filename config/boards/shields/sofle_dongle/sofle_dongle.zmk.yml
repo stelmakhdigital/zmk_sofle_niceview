@@ -1,0 +1,12 @@
+# Copyright (c) 2023 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+identifier: sofle_dongle
+name: Sofle Dongle
+type: shield
+url: https://github.com/stelmakhdigital/zmk_sofle_niceview
+requires: [nice_nano_v2]
+features:
+  - keys
+  - display
+siblings: []
