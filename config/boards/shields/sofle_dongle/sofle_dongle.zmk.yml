@@ -2,8 +2,9 @@
 # SPDX-License-Identifier: MIT
 
 identifier: sofle_dongle
-name: Sofle Dongle
+name: sofle_dongle
 type: shield
+description: Sofle split keyboard dongle configuration
 url: https://github.com/stelmakhdigital/zmk_sofle_niceview
 requires: [nice_nano_v2]
 features:
