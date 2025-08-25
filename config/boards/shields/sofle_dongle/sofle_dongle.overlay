@@ -5,6 +5,8 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/pinctrl/nrf-pinctrl.h>
 
 / {
     chosen {
@@ -32,37 +34,36 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,6) RC(3,7) RC(3,8) RC(3,9) 
         rows = <5>;
         events = <>;
     };
-
-    // Virtual sensors for receiving encoder data from split halves
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <20>;
-    };
-
-    left_encoder: encoder_left {
-        compatible = "zmk,behavior-sensor-rotate";
-        label = "LEFT_ENCODER";
-        #sensor-binding-cells = <0>;
-        bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-    };
-
-    right_encoder: encoder_right {
-        compatible = "zmk,behavior-sensor-rotate";
-        label = "RIGHT_ENCODER";
-        #sensor-binding-cells = <0>;
-        bindings = <&inc_dec_kp PG_UP PG_DN>;
-    };
 };
 
 // Enable I2C for NiceView display on NiceNano v2
-&nice_nano_i2c {
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
+        };
+    };
+
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
+            low-power-enable;
+        };
+    };
+};
+
+&i2c0 {
     status = "okay";
+    compatible = "nordic,nrf-twim";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
-        label = "DISPLAY";
         width = <128>;
         height = <32>;
         segment-offset = <0>;
@@ -71,6 +72,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,6) RC(3,7) RC(3,8) RC(3,9) 
         multiplex-ratio = <31>;
         segment-remap;
         com-invdir;
+        inversion-on;
         com-sequential;
         prechargep = <0x22>;
     };
