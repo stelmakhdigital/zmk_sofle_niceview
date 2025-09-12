@@ -184,7 +184,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   adjust:
-  - BT CLR
+  - EP TOG
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
@@ -196,7 +196,7 @@ layers:
   - ''
   - ''
   - ''
-  - EP TOG
+  - RGB TOG
   - RGB HUD
   - RGB HUI
   - RGB SAD
@@ -220,13 +220,13 @@ layers:
   - ''
   - ''
   - ''
+  - BT CLR
   - ''
   - ''
   - ''
   - ''
   - ''
   - ''
-  - RGB TOG
   - ''
   - ''
   - ''
