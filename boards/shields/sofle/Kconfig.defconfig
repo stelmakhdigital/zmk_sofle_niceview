@@ -1,8 +1,7 @@
-## -----------------------------------------------------------------
 if SHIELD_SOFLE_DONGLE
 
 config ZMK_KEYBOARD_NAME
-    default "Sofle"
+    default "Stelmakh Keyboard"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
@@ -26,14 +25,16 @@ config ZMK_SLEEP
     default n
     
 endif ## SHIELD_SOFLE_DONGLE
-## -----------------------------------------------------------------
+
+
 if SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default n
 
 endif ## SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
-## -----------------------------------------------------------------
+
+
 if SHIELD_SOFLE_DONGLE || SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
 
 config ZMK_BLE
@@ -45,7 +46,6 @@ config ZMK_SPLIT
 config ZMK_SLEEP
     default y
     
-## ------------------
 config ZMK_DISPLAY
     default n
 
@@ -58,7 +58,8 @@ config SSD1306
     default y
 
 endif ## ZMK_DISPLAY
-## ------------------
+
+
 if LVGL
 
 config LV_Z_VDB_SIZE
@@ -69,19 +70,22 @@ config LV_DPI_DEF
 
 config LV_Z_BITS_PER_PIXEL
     default 1
-## -------
+
 choice LV_COLOR_DEPTH
     default LV_COLOR_DEPTH_1
-
 endchoice
-## -------
+
 endif ## LVGL
-## ------------------
+
+
 config ZMK_RGB_UNDERGLOW
-    default n
+    default y
 
 config ZMK_RGB_UNDERGLOW_EXT_POWER
-    default n
+    default y
+
+config ZMK_RGB_UNDERGLOW_AUTO_OFF_IDLE
+    default y
 
 if ZMK_RGB_UNDERGLOW
 
@@ -89,6 +93,5 @@ config WS2812_STRIP
     default y
 
 endif ## ZMK_RGB_UNDERGLOW
-## ------------------
+
 endif ## SHIELD_SOFLE_DONGLE || SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
-## -----------------------------------------------------------------
