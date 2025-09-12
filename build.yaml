@@ -28,7 +28,7 @@ include:
     shield: sofle_right
   # Dongle (central device)
   - board: nice_nano_v2
-    shield: sofle_dongle
+    shield: dongle_display_view_pro_micro
   # Settings reset utility
   - board: nice_nano_v2
     shield: settings_reset
