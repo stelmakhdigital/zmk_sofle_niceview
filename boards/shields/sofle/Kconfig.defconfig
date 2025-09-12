@@ -1,7 +1,7 @@
 if SHIELD_SOFLE_DONGLE
 
 config ZMK_KEYBOARD_NAME
-    default "Stelmakh Keyboard"
+    default "Stelmakh"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
