@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: stelmakhdigital
+      url-base: https://github.com/stelmakhdigital
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk_driver_azoteq
+      remote: stelmakhdigital
+      revision: master
   self:
     path: config
