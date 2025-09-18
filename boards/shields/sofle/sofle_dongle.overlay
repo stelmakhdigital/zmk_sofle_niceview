@@ -58,7 +58,8 @@
         switch-xy;
 
         reset-gpios = <&pro_micro 14 GPIO_ACTIVE_LOW>;
-        rdy-gpios = <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        rdy-gpios = <&pro_micro 15 GPIO_ACTIVE_HIGH>;
+        /* (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
     };
 };
 
