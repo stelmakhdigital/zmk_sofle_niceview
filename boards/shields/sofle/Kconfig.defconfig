@@ -79,13 +79,13 @@ endif ## LVGL
 
 
 config ZMK_RGB_UNDERGLOW
-    default y
+    default n
 
 config ZMK_RGB_UNDERGLOW_EXT_POWER
-    default y
+    default n
 
 config ZMK_RGB_UNDERGLOW_AUTO_OFF_IDLE
-    default y
+    default n
 
 if ZMK_RGB_UNDERGLOW
 
