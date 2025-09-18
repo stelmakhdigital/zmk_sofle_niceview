@@ -102,7 +102,7 @@
         rdy-gpios = <&gpio1 13 GPIO_ACTIVE_HIGH>;
 
         /* Add interrupt configuration */
-        irq-gpios = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        // irq-gpios = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 };
 
