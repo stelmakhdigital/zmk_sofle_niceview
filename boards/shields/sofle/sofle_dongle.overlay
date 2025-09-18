@@ -2,6 +2,7 @@
 #include <layouts/josefadamcik/sofle.dtsi>
 #include <dt-bindings/led/led.h>
 #include <zephyr/dt-bindings/i2c/i2c.h>
+#include <dt-bindings/pinctrl/nrf-pinctrl.h>
 
 &josefadamcik_sofle_layout {
     transform = <&default_transform>;
@@ -63,7 +64,7 @@
 
 / {
     chosen {
-        zmk,kscan = &kscan_direct;
+        zmk,kscan = &mock_kscan;
         zmk,physical-layout = &josefadamcik_sofle_layout;
     };
 
@@ -85,18 +86,16 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         >;
     };
 
-
-    kscan_direct: kscan_direct {
-        compatible = "zmk,kscan-gpio-direct";
-        wakeup-source;
-
-        input-gpios = <&gpio1 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-
-    };
-
     tps43_input: tps43_input {
         compatible = "zmk,input-listener";
         device = <&tps43>;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
     };
 
     left_encoder: encoder_left {
