@@ -6,6 +6,8 @@
 
 &nice_view_spi {
     status = "okay";
+    /* Redefining the CS pin to D0 (P0.08) for use NiceView with RGB (RGB power is tied to SPI) */
+    cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>; 
     nice_view: ls0xx@0 {
         compatible = "sharp,ls0xx";
         spi-max-frequency = <1000000>;
