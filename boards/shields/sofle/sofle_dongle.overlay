@@ -79,6 +79,7 @@
         compatible = "azoteq,iqs5xx";
         reg = <0x74>;
 
+        /* Input configuration */
         one-finger-tap;
         press-and-hold;
         press-and-hold-time = <250>;
@@ -99,6 +100,9 @@
          */
         reset-gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
         rdy-gpios = <&gpio1 13 GPIO_ACTIVE_HIGH>;
+
+        /* Add interrupt configuration */
+        irq-gpios = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 };
 
