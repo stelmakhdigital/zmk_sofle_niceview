@@ -95,11 +95,11 @@
         switch-xy;
 
         /* Correct GPIO mapping for Nice Nano v2 physical connections:
-         * RST - P1.11 (Nice Nano pin 1.11)
-         * RDY - P1.13 (Nice Nano pin 1.13)
+         * RST - P1.11 (Nice Nano pin 1.11) - D14
+         * RDY - P1.13 (Nice Nano pin 1.13) - D15
          */
-        reset-gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
-        rdy-gpios = <&gpio1 13 GPIO_ACTIVE_HIGH>;
+        reset-gpios = <&pro_micro 14 GPIO_ACTIVE_LOW>;
+        rdy-gpios = <&pro_micro 15 GPIO_ACTIVE_HIGH>;
 
     };
 };
@@ -143,16 +143,16 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
         status = "okay";
     };
 
     right_encoder: encoder_right {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
         status = "okay";
     };
