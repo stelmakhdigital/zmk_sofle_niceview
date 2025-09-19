@@ -80,19 +80,19 @@
         reg = <0x74>;
 
         /* Input configuration */
-        one-finger-tap = <1>;
-        press-and-hold = <1>;
+        one-finger-tap;
+        press-and-hold;
         press-and-hold-time = <250>;
-        two-finger-tap = <1>;
+        two-finger-tap;
 
-        scroll = <1>;
-        natural-scroll-y = <1>;
-        natural-scroll-x = <1>;
+        scroll;
+        natural-scroll-y;
+        natural-scroll-x;
 
         bottom-beta = <5>;
         stationary-threshold = <5>;
 
-        flip-y = <1>;
+        flip-y;
 
         /* Correct GPIO mapping for Nice Nano v2 physical connections:
          * RST - P1.11 (Nice Nano pin 1.11) - D14
