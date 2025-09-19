@@ -25,7 +25,7 @@
         };
     };
 
-    /* Rewire SPI to D1 (P0.06) for led underglow */
+    /* SPI3 for RGB - disabled on dongle */
     spi3_default: spi3_default {
         group1 {
             psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
@@ -40,9 +40,9 @@
     };
 };
 
-
+/* SPI3 for RGB underglow - DISABLED on dongle */
 &spi3 {
-    status = "okay";
+    status = "disabled";
     compatible = "nordic,nrf-spim";
 
     pinctrl-0 = <&spi3_default>;
@@ -57,7 +57,7 @@
         spi-max-frequency = <1000000>;
 
         /* WS2812 */
-        chain-length = <0>; /* 0 keys because it is only for initializing the underglow */
+        chain-length = <0>; /* 0 keys because dongle has no RGB */
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
 
