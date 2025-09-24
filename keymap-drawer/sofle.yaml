@@ -43,8 +43,8 @@ layers:
   - C
   - V
   - B
-  - {t: "🔊\nMUTE\n🔉", type: encoder, ccw: "VOL-", cw: "VOL+"}
-  - {t: "PG↑\nRGB TOG\nPG↓", type: encoder, ccw: "PG UP", cw: "PG DN"}
+  - MUTE
+  - RGB TOG
   - N
   - M
   - ','
@@ -104,8 +104,8 @@ layers:
   - KP PLUS
   - '{'
   - '}'
-  - {t: "⏮\nPLAY/PAUSE\n⏭", type: encoder, ccw: "PREV", cw: "NEXT"}
-  - {t: "PG↑\n▽\nPG↓", type: encoder, ccw: "PG UP", cw: "PG DN"}
+  - PLAY PAUSE
+  - {t: ▽, type: trans}
   - '['
   - ']'
   - ;
@@ -165,8 +165,6 @@ layers:
   - COPY
   - PASTE
   - {t: ▽, type: trans}
-  - {t: "🔊\n▽\n🔉", type: encoder, ccw: "VOL-", cw: "VOL+"}
-  - {t: "PG↑\n▽\nPG↓", type: encoder, ccw: "PG UP", cw: "PG DN"}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -224,8 +222,8 @@ layers:
   - ''
   - BT CLR
   - ''
-  - {t: "🔊\n▽\n🔉", type: encoder, ccw: "VOL-", cw: "VOL+"}
-  - {t: "🔅\n▽\n🔆", type: encoder, ccw: "BRIGHT-", cw: "BRIGHT+"}
+  - ''
+  - ''
   - ''
   - ''
   - ''
