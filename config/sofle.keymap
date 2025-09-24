@@ -182,7 +182,7 @@
         raise_layer {
             label = "raise";
             bindings = <
-&trans        &trans      &trans     &trans       &trans       &trans                    &trans     &trans    &trans    &trans     &trans   &trans
+&trans        &trans      &trans     &trans       &trans       &trans                    &kp F20    &kp F21   &kp F22   &kp F23    &kp F24  &trans
 &trans        &kp INS     &kp PSCRN  &kp K_CMENU  &trans       &trans                    &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans   &trans
 &kp CAPSLOCK  &trans      &trans     &trans       &trans       &trans                    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
 &trans        &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans  &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
