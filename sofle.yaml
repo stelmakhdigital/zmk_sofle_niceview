@@ -5,7 +5,7 @@ layers:
   - ['0', '', ESC, Q, W, E, R, T, Y, U]
   - [I, O, P, BSPC, TAB, A, S, D, F, G]
   - [H, J, K, L, ;, '''', LSHFT, Z, X, C]
-  - [V, B, MUTE, '', N, M, ',', ., /, RSHFT]
+  - [V, B, {t: "🔊\nMUTE\n🔉", type: encoder, ccw: "VOL-", cw: "VOL+"}, {t: "PG↑\nRGB TOG\nPG↓", type: encoder, ccw: "PG UP", cw: "PG DN"}, N, M, ',', ., /, RSHFT]
   - [LGUI, LALT, LCTRL, lower, RET, SPACE, raise, RCTRL, RALT, RGUI]
   lower:
   - - {t: ▽, type: trans}
@@ -41,8 +41,8 @@ layers:
     - KP PLUS
   - - '{'
     - '}'
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {t: "⏮\nPLAY/PAUSE\n⏭", type: encoder, ccw: "PREV", cw: "NEXT"}
+    - {t: "PG↑\n▽\nPG↓", type: encoder, ccw: "PG UP", cw: "PG DN"}
     - '['
     - ']'
     - ;
@@ -102,8 +102,8 @@ layers:
     - COPY
   - - PASTE
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {t: "🔊\n▽\n🔉", type: encoder, ccw: "VOL-", cw: "VOL+"}
+    - {t: "PG↑\n▽\nPG↓", type: encoder, ccw: "PG UP", cw: "PG DN"}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -134,7 +134,7 @@ layers:
   - ['', '', EP TOG, RGB HUD, RGB HUI, RGB SAD, RGB SAI, RGB EFF, '', '']
   - ['', '', '', '', '', RGB BRD, RGB BRI, '', '', '']
   - ['', '', '', '', '', '', '', '', '', '']
-  - ['', '', RGB TOG, '', '', '', '', '', '', '']
+  - ['', '', {t: "🔊\n▽\n🔉", type: encoder, ccw: "VOL-", cw: "VOL+"}, {t: "🔅\n▽\n🔆", type: encoder, ccw: "BRIGHT-", cw: "BRIGHT+"}, '', '', '', '', '', '']
   - - ''
     - ''
     - ''

@@ -1,0 +1,80 @@
+parse_config:
+  zmk_keymap: "config/sofle.keymap"
+
+draw_config:
+  key_w: 60.0
+  key_h: 56.0
+  split_gap: 30.0
+  combo_w: 28.0
+  combo_h: 26.0
+  
+  # Конфигурация для отображения энкодеров
+  encoder_config:
+    # Левый энкодер (позиция 46 в стандартной раскладке sofle)
+    46:
+      type: encoder
+      clockwise: "VOL+"     # Поворот вправо
+      counter_clockwise: "VOL-"  # Поворот влево
+      press: "MUTE"         # Нажатие
+      layers:
+        0:  # default layer
+          clockwise: "VOL+"
+          counter_clockwise: "VOL-"
+          press: "MUTE"
+        1:  # lower layer  
+          clockwise: "PREV"
+          counter_clockwise: "NEXT"
+          press: "PLAY/PAUSE"
+        2:  # raise layer
+          clockwise: "VOL+"
+          counter_clockwise: "VOL-"
+          press: ""
+        3:  # adjust layer
+          clockwise: "VOL+"
+          counter_clockwise: "VOL-"
+          press: ""
+    
+    # Правый энкодер (позиция 47 в стандартной раскладке sofle)
+    47:
+      type: encoder
+      clockwise: "PG DN"    # Поворот вправо
+      counter_clockwise: "PG UP"  # Поворот влево
+      press: "RGB TOG"      # Нажатие
+      layers:
+        0:  # default layer
+          clockwise: "PG DN"
+          counter_clockwise: "PG UP"
+          press: "RGB TOG"
+        1:  # lower layer
+          clockwise: "PG DN"
+          counter_clockwise: "PG UP"
+          press: ""
+        2:  # raise layer
+          clockwise: "PG DN"
+          counter_clockwise: "PG UP"
+          press: ""
+        3:  # adjust layer
+          clockwise: "BRIGHT-"
+          counter_clockwise: "BRIGHT+"
+          press: ""
+
+  # Стили для энкодеров
+  svg_style: |
+    .encoder {
+      fill: #f0f0f0;
+      stroke: #666;
+      stroke-width: 2;
+    }
+    .encoder-cw {
+      font-size: 10px;
+      fill: #333;
+    }
+    .encoder-ccw {
+      font-size: 10px;
+      fill: #333;
+    }
+    .encoder-press {
+      font-size: 12px;
+      fill: #000;
+      font-weight: bold;
+    }
