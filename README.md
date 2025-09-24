@@ -7,6 +7,40 @@ There are other configurations in the project (located in other git branches):
 - Added dongle (NiceNano v2 or ProMicro) with niceview display and touchpad (Azoteq TPS43) - branch `update/added_ dongle_ with_azoteq_niceview`
 - Added a touchpad (Azoteq TPS43) to the right keyboard (without the E11 encoder on the right keyboard) - branch `in development` 
 
+--- 
+
+> Important note!
+>
+> The Sofle v1 PCB is configured for OLED displays and to connect the NiceView display, you need to solder the `CS` pin on yours NiceViews to pin P0.06(D1) NiceNano
+>
+> - NiceNano pinout (https://nicekeyboards.com/docs/nice-nano/pinout-schematic)
+> - NiceView pinout (https://nicekeyboards.com/docs/nice-view/pinout-schematic)
+
+---
+
+
+## Keyboard Cases
+
+I have designed several variants of cases for the Sofle v1 keyboard (an example is in the photo) and if you want to purchase a models in STL format from me for printing on a 3d printer, write to me on Telegram @StelmakhDigital (https://t.me/StelmakhDigital )
+
+
+## Keyboard pics
+
+![Pic Sofle keyboard with NiceView displays](./src/keyboard_with_niceview.jpg "Sofle keyboard with NiceView displays")
+
+<details><summary>Other pics (Click Me)</summary>
+
+- PCB Sofle v1 keyboard
+![PCB Sofle keyboard](./src/pcb_sofle_v1.jpg "PCB Sofle v1 keyboard")
+
+- Sofle keyboard without NiceView displays
+![Pic Sofle keyboard without NiceView displays](./src/keyboard_without_niceview.jpg "Sofle keyboard without NiceView displays")
+
+- Dongle with Azoteq touchpad and NiceView display
+![Pic Dongle with Azoteq touchpad and NiceView display](./src/dongle_with_touchpad_niceview.jpg "Dongle with Azoteq touchpad and NiceView display")
+
+</details>
+
 
 ## Default keymap
 The default keymap of this keyboard can be found here:
