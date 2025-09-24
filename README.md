@@ -1,5 +1,13 @@
 # Sofle V1
 
+## Note
+
+There are other configurations in the project (located in other git branches):
+- A key has been added (nicenano v2 or analog promirco) with the niceview extension - the branch `update/add_song_niceview`
+- Added dongle (nicenano v2 or Alan promirko) with niceview disc and touchpad (azoteq tps43) - branch `update/added_ dongle_ with_azoteq_niceview`
+- Added a touchpad (azoteq TPS43) to the right keyboard (without the E11 encoder on the right keyboard) - branch `in development` 
+
+
 ## Default keymap
 The default keymap of this keyboard can be found here:
 ![Default Keymap](./keymap-drawer/sofle.svg)
