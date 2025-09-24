@@ -104,7 +104,7 @@ layers:
   - KP PLUS
   - '{'
   - '}'
-  - {t: ▽, type: trans}
+  - PLAY PAUSE
   - {t: ▽, type: trans}
   - '['
   - ']'
