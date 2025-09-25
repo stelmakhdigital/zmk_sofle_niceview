@@ -3,9 +3,9 @@
 ## Note
 
 There are other configurations in the project (located in other git branches):
-- Added dongle (NiceNano v2 or ProMicro) with the niceview display - the branch `update/add_song_niceview`
-- Added dongle (NiceNano v2 or ProMicro) with niceview display and touchpad (Azoteq TPS43) - branch `update/added_ dongle_ with_azoteq_niceview`
-- Added a touchpad (Azoteq TPS43) to the right keyboard (without the E11 encoder on the right keyboard) - branch `in development` 
+- Added dongle (NiceNano v2 or ProMicro) with NiceView display - the branch `update/add_dongle_niceview`
+- Added dongle (NiceNano v2 or ProMicro) with NiceView display and Azoteq touchpad (TPS43) - branch `update/added_dongle_with_azoteq_niceview`
+- Added a Azoteq touchpad (TPS43) to the right keyboard (without the E11 encoder on the right keyboard) - branch `in development` 
 
 --- 
 
