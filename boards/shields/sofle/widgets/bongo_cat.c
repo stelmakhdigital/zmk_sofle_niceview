@@ -1,12 +1,5 @@
-/*
- * Copyright (c) 2024 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
+/* Migrated bongo_cat widget */
 #include <zephyr/kernel.h>
-#include <zephyr/bluetooth/services/bas.h>
-
 #include <zephyr/logging/log.h>
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
@@ -69,17 +62,9 @@ const lv_img_dsc_t *fast_imgs[] = {
     &bongo_cat_none,
 };
 
-struct bongo_cat_wpm_status_state {
-    uint8_t wpm;
-};
+struct bongo_cat_wpm_status_state { uint8_t wpm; };
 
-enum anim_state {
-    anim_state_none,
-    anim_state_idle,
-    anim_state_slow,
-    anim_state_mid,
-    anim_state_fast
-} current_anim_state;
+enum anim_state { anim_state_none, anim_state_idle, anim_state_slow, anim_state_mid, anim_state_fast } current_anim_state;
 
 static void set_animation(lv_obj_t *animing, struct bongo_cat_wpm_status_state state) {
     if (state.wpm < 5) {
@@ -119,7 +104,7 @@ static void set_animation(lv_obj_t *animing, struct bongo_cat_wpm_status_state s
 
 struct bongo_cat_wpm_status_state bongo_cat_wpm_status_get_state(const zmk_event_t *eh) {
     struct zmk_wpm_state_changed *ev = as_zmk_wpm_state_changed(eh);
-    return (struct bongo_cat_wpm_status_state) { .wpm = ev->state };
+    return (struct bongo_cat_wpm_status_state){ .wpm = ev->state };
 };
 
 void bongo_cat_wpm_status_update_cb(struct bongo_cat_wpm_status_state state) {
@@ -129,7 +114,6 @@ void bongo_cat_wpm_status_update_cb(struct bongo_cat_wpm_status_state state) {
 
 ZMK_DISPLAY_WIDGET_LISTENER(widget_bongo_cat, struct bongo_cat_wpm_status_state,
                             bongo_cat_wpm_status_update_cb, bongo_cat_wpm_status_get_state)
-
 ZMK_SUBSCRIPTION(widget_bongo_cat, zmk_wpm_state_changed);
 
 int zmk_widget_bongo_cat_init(struct zmk_widget_bongo_cat *widget, lv_obj_t *parent) {
@@ -139,10 +123,7 @@ int zmk_widget_bongo_cat_init(struct zmk_widget_bongo_cat *widget, lv_obj_t *par
     sys_slist_append(&widgets, &widget->node);
 
     widget_bongo_cat_init();
-
     return 0;
 }
 
-lv_obj_t *zmk_widget_bongo_cat_obj(struct zmk_widget_bongo_cat *widget) {
-    return widget->obj;
-}
+lv_obj_t *zmk_widget_bongo_cat_obj(struct zmk_widget_bongo_cat *widget) { return widget->obj; }

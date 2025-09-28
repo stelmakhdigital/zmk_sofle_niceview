@@ -1,11 +1,5 @@
-/*
- * Copyright (c) 2024 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
- 
- #pragma once
-
+/* Bongo cat widget (migrated from dongle_display_view) */
+#pragma once
 #include <lvgl.h>
 #include <zephyr/kernel.h>
 
