@@ -31,7 +31,7 @@ config ZMK_SLEEP
     default n
     
 config I2C
-    default y
+    default n
 
 config ZMK_DISPLAY
     default y
