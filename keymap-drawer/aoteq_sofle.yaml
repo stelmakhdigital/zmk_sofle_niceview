@@ -1,4 +1,4 @@
-layout: {zmk_keyboard: sofle_dongle}
+layout: {zmk_keyboard: azoteq_sofle}
 layers:
   default:
   - '`'

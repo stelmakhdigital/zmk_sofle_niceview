@@ -21,12 +21,13 @@
 #     shield: settings_reset
 ---
 include:
-  # Split keyboard halves (now as peripherals)
+  # Левая половина (энкодер + тачпад Azoteq на центральной прошивке не нужен дисплей)
   - board: nice_nano_v2
-    shield: sofle_left display_view_pro_micro
+    shield: azoteq_sofle_left display_view_pro_micro
+  # Правая половина
   - board: nice_nano_v2
-    shield: sofle_right display_view_pro_micro
-  # Settings reset utility
+    shield: azoteq_sofle_right display_view_pro_micro
+  # Utility для сброса настроек
   - board: nice_nano_v2
     shield: settings_reset
 
