@@ -163,7 +163,7 @@
                         &kp ESCAPE  &kp LEFT_GUI  &kp DELETE  &mo LOWER  &kp SPACE     &kp ENTER        &mo RAISE  &kp BACKSPACE  &kp RGUI   &kp RIGHT_ALT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
@@ -176,7 +176,7 @@
                            &trans     &trans       &trans    &trans     &trans              &trans  &trans     &trans    &trans           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_PREVIOUS C_NEXT &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_PREVIOUS C_NEXT>;
         };
 
         raise_layer {
@@ -189,7 +189,7 @@
                           &trans     &trans       &trans       &trans  &trans    &trans  &trans     &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         adjust_layer {
@@ -202,7 +202,7 @@
                                     &none            &none            &none            &none            &none              &none  &none         &none         &none         &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRIGHTNESS_DEC C_BRIGHTNESS_INC>;
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_DEC C_BRIGHTNESS_INC>;
         };
     };
 };
