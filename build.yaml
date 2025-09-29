@@ -23,10 +23,10 @@
 include:
   # Левая половина (энкодер + тачпад Azoteq на центральной прошивке не нужен дисплей)
   - board: nice_nano_v2
-    shield: azoteq_sofle_left display_view_pro_micro
+    shield: azoteq_sofle_left nice_view_adapter nice_view
   # Правая половина
   - board: nice_nano_v2
-    shield: azoteq_sofle_right display_view_pro_micro
+    shield: azoteq_sofle_right nice_view_adapter nice_view
   # Utility для сброса настроек
   - board: nice_nano_v2
     shield: settings_reset
