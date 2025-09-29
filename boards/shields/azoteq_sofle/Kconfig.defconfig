@@ -1,19 +1,19 @@
-if SHIELD_SOFLE_DONGLE
+if SHIELD_AZOTEQ_SOFLE_LEFT || SHIELD_AZOTEQ_SOFLE_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "Stelmakh"
 
-config ZMK_SPLIT_ROLE_CENTRAL
+config ZMK_BLE
     default y
 
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-    default 3
+    default 2
 
 config BT_MAX_CONN
-    default 7
+    default 5
 
 config BT_MAX_PAIRED
-    default 7
+    default 5
 
 config ZMK_STUDIO
     default y
@@ -22,45 +22,22 @@ config ZMK_STUDIO_LOCKING
     default n  
 
 config ZMK_SLEEP
-    default n
-    
-endif ## SHIELD_SOFLE_DONGLE
-
-
-if SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
-
-config ZMK_SPLIT_ROLE_CENTRAL
-    default n
-
-endif ## SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
-
-
-if SHIELD_SOFLE_DONGLE || SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
-
-config ZMK_BLE
     default y
-
-config ZMK_SPLIT
-    default y
-
-config ZMK_SLEEP
-    default y
-    
-config ZMK_DISPLAY
-    default n
-
-if ZMK_DISPLAY
 
 config I2C
     default y
+
+config ZMK_DISPLAY
+    default y
+    
+if ZMK_DISPLAY
 
 config SSD1306
     default y
 
 endif ## ZMK_DISPLAY
 
-
-if LVGL
+if LVGL || SSD1306
 
 config LV_Z_VDB_SIZE
     default 64
@@ -76,7 +53,6 @@ choice LV_COLOR_DEPTH
 endchoice
 
 endif ## LVGL
-
 
 config ZMK_RGB_UNDERGLOW
     default y
@@ -94,4 +70,18 @@ config WS2812_STRIP
 
 endif ## ZMK_RGB_UNDERGLOW
 
-endif ## SHIELD_SOFLE_DONGLE || SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
+endif ## SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
+
+if SHIELD_AZOTEQ_SOFLE_RIGHT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
+
+endif ## SHIELD_AZOTEQ_SOFLE_RIGHT
+
+if SHIELD_AZOTEQ_SOFLE_LEFT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif ## SHIELD_AZOTEQ_SOFLE_LEFT

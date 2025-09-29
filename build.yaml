@@ -23,12 +23,9 @@
 include:
   # Split keyboard halves (now as peripherals)
   - board: nice_nano_v2
-    shield: sofle_left
+    shield: sofle_left display_view_pro_micro
   - board: nice_nano_v2
-    shield: sofle_right
-  # Dongle (central device) with display
-  - board: nice_nano_v2
-    shield: sofle_dongle dongle_display_view_pro_micro
+    shield: sofle_right display_view_pro_micro
   # Settings reset utility
   - board: nice_nano_v2
     shield: settings_reset
