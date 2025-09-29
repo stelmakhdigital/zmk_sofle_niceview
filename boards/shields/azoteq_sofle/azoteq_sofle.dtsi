@@ -4,7 +4,7 @@
 #include <dt-bindings/pinctrl/nrf-pinctrl.h>
 #include "azoteq_sofle-layouts.dtsi"
 
-&josefadamcik_sofle_layout {
+&azoteq_sofle_layout {
     transform = <&default_transform>;
 };
 
