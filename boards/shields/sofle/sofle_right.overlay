@@ -9,15 +9,15 @@
 };
 
 &pinctrl {
-    /* Rewire I2C0 to D4/D5 (P0.22/P0.24) for Azoteq TSP43 */
-    i2c0_rewired_default: i2c0_rewired_default {
+    /* Rewire I2C1 to D4/D5 (P0.22/P0.24) for Azoteq TSP43 */
+    i2c1_rewired_default: i2c1_rewired_default {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 22)>,
                     <NRF_PSEL(TWIM_SCL, 0, 24)>;
         };
     };
 
-    i2c0_rewired_sleep: i2c0_rewired_sleep {
+    i2c1_rewired_sleep: i2c1_rewired_sleep {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 22)>,
                     <NRF_PSEL(TWIM_SCL, 0, 24)>;
@@ -65,13 +65,13 @@
     };
 };
 
-&i2c0 {
+&i2c1 {
     status = "okay";
     clock-frequency = <I2C_BITRATE_FAST>;
 
-    /* Use rewired pins for I2C0 */
-    pinctrl-0 = <&i2c0_rewired_default>;
-    pinctrl-1 = <&i2c0_rewired_sleep>;
+    /* Use rewired pins for I2C1 */
+    pinctrl-0 = <&i2c1_rewired_default>;
+    pinctrl-1 = <&i2c1_rewired_sleep>;
     pinctrl-names = "default", "sleep";
 
     tps43: iqs5xx@74 {
