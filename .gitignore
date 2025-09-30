@@ -2,3 +2,8 @@ tmp
 .vscode
 .west
 zmk
+zmk_*
+venv
+.env
+zephyr
+modules
