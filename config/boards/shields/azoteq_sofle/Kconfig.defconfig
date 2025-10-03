@@ -1,11 +1,5 @@
 if SHIELD_AZOTEQ_SOFLE_LEFT || SHIELD_AZOTEQ_SOFLE_RIGHT
 
-#config AZOTEQ_SOFLE_FEATURES
-#    bool
-#    default y
-#    select ZMK_WPM
-#    select ZMK_KEYCODE_EVENTS
-
 config ZMK_KEYBOARD_NAME
     default "Stelmakh"
 
