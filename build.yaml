@@ -22,7 +22,7 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: azoteq_sofle_left display_view_horizontal
+    shield: azoteq_sofle_left
   - board: nice_nano_v2
     shield: azoteq_sofle_right display_view_horizontal
   - board: nice_nano_v2
