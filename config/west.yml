@@ -15,5 +15,8 @@ manifest:
     - name: zmk_niceview_horizontal
       remote: stelmakhdigital
       revision: master
+    - name: zmk_azoteq_touchpad
+      remote: stelmakhdigital
+      revision: master
   self:
     path: config

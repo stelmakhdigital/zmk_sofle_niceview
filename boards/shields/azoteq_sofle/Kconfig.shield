@@ -1,0 +1,5 @@
+config SHIELD_AZOTEQ_SOFLE_LEFT
+    def_bool $(shields_list_contains,azoteq_sofle_left)
+
+config SHIELD_AZOTEQ_SOFLE_RIGHT
+    def_bool $(shields_list_contains,azoteq_sofle_right)
