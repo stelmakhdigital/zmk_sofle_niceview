@@ -16,10 +16,13 @@ config BT_MAX_PAIRED
     default 5
 
 config ZMK_STUDIO
-    default y
+    default n
 
 config ZMK_STUDIO_LOCKING
     default n  
+
+config ZMK_WPM
+    default n
 
 config ZMK_SLEEP
     default y
