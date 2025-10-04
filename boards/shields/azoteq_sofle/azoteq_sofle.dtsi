@@ -6,11 +6,6 @@
 #include "azoteq_sofle-layouts.dtsi"
 #include "azoteq_sofle-pinctrl.dtsi"
 
-&azoteq_sofle_layout {
-    transform = <&default_transform>;
-};
-
-
 / {
     chosen {
         zmk,kscan = &kscan0;
@@ -65,27 +60,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
     };
 
 };
-
-&adc {
-    status = "okay";
-};
-
-&gpiote {
-    status = "okay";
-};
-
-&gpio0 {
-    status = "okay";
-};
-
-&gpio1 {
-    status = "okay";
-};
-
-&usbd {
-    status = "okay";
-};
-
 
 &spi3 {
     status = "okay";
