@@ -30,27 +30,25 @@ freeze:
 	@echo "Freezing PIP dependencies"
 	pip freeze > ${BASE_DIR}/requirements.txt
 
-## * make build - сборка прошивки (make build BOARD=left | right | dongle);
+## * make build - сборка прошивки (make build BOARD=(left|right|dongle) SHIELD_FIREWARE="azoteq_sofle_left display_view_horizontal");
 build:
-	west build -d build/${BOARD} -s ${ZMK_APP_DIR} -b ${MAIN_BOARD} -- -DSHIELD="azoteq_sofle_${BOARD}${ADDITION_BOARD}" -DZMK_CONFIG=${DZMK_CONFIG}
+	west build -d build/${BOARD} -s ${ZMK_APP_DIR} -b ${MAIN_BOARD} -- -DSHIELD=${SHIELD_FIREWARE} -DZMK_CONFIG=${DZMK_CONFIG}
 	mkdir -p ${FIREWARE_DIR}
 	cp build/${BOARD}/zephyr/zmk.uf2 ${FIREWARE_DIR}/azoteq_sofle_${BOARD}_${MAIN_BOARD}.uf2
-
-
-## * make build - сборка прошивки с уникальным названием платы (make build BOARD=left | right | dongle ADDITION_BOARD=zmk_niceview zmk_niceview_bl);
-custom_build:
-	west build -d build/${BOARD} -s ${ZMK_APP_DIR} -b ${MAIN_BOARD} -- -DSHIELD="${ADDITION_BOARD}" -DZMK_CONFIG=${DZMK_CONFIG}
-	mkdir -p ${FIREWARE_DIR}
-	cp build/${BOARD}/zephyr/zmk.uf2 ${FIREWARE_DIR}/azoteq_sofle_${BOARD}_${MAIN_BOARD}.uf2
-
-
-zephyr_check:
-	west zephyr-export
-	west list
 
 ## * make clear_build - очистка артефактов сборки;
 clear_build:
 	rm -rf build ${FIREWARE_DIR}
+
+_build_l:
+	west build -d build/left -s ${ZMK_APP_DIR} -b ${MAIN_BOARD} -- -DSHIELD="azoteq_sofle_left display_view_horizontal" -DZMK_CONFIG=${DZMK_CONFIG}
+	mkdir -p ${FIREWARE_DIR}
+	cp build/left/zephyr/zmk.uf2 ${FIREWARE_DIR}/azoteq_sofle_left_${MAIN_BOARD}.uf2
+
+_build_r:
+	west build -d build/right -s ${ZMK_APP_DIR} -b ${MAIN_BOARD} -- -DSHIELD="azoteq_sofle_right display_view_horizontal azoteq_touchpad" -DZMK_CONFIG=${DZMK_CONFIG}
+	mkdir -p ${FIREWARE_DIR}
+	cp build/right/zephyr/zmk.uf2 ${FIREWARE_DIR}/azoteq_sofle_right_${MAIN_BOARD}.uf2
 
 _clear_all:
 	clear
@@ -58,28 +56,38 @@ _clear_all:
 
 _init:
 	@echo "Initializing project..."
-	west init -l ./
-	west update
-	west zephyr-export
-	pip install -r ./zephyr/scripts/requirements-extras.txt
+	cd zmk && \
+	west init -l ./ && \
+	west update && \
+	pip install -r ./zephyr/scripts/requirements-extras.txt && \
+	cd ..
+
 
 _first_init:
 	@echo "First time initialization..."
-	brew install cmake ninja gperf python3 ccache qemu dtc wget libmagic
-	python3 -m venv venv
-
+	brew install cmake ninja gperf python3 ccache qemu dtc wget libmagic && \
+	python3 -m venv venv && \
+ 
 _install_west:
 	# Run command before - 'source venv/bin/activate'
 	pip install west
 
-activate_env:
+_zephyr_check:
+	west zephyr-export
+	west list
+
+_activate_env_values:
 	./setup_env.sh
 
-
-
-# ./module.yml
-# name: zmk-config
-# build:
-#   settings:
-#     board_root: boards
-#     shield_root: boards/shields
+# ! с консоли make не работает
+_init_env:
+	source venv/bin/activate
+	source zmk/zephyr/zephyr-env.sh
+ 
+start:
+	_first_init 
+	_install_west
+	_init
+	_zephyr_check
+	_activate_env_values
+	_init_env
