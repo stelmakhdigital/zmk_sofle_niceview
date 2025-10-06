@@ -10,3 +10,6 @@ modules
 build
 .DS_Store
 bootloader
+zmk_azoteq_touchpad
+zmk_driver_azoteq
+zmk_niceview_horizontal
