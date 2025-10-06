@@ -6,6 +6,9 @@ config ZMK_KEYBOARD_NAME
 config ZMK_BLE
     default y
 
+config ZMK_SPLIT
+    default y
+
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
     default 2
 
@@ -48,12 +51,16 @@ endif ## ZMK_RGB_UNDERGLOW
 
 endif ## SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
 
+
+
 if SHIELD_AZOTEQ_SOFLE_RIGHT
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default n
 
 endif ## SHIELD_AZOTEQ_SOFLE_RIGHT
+
+
 
 if SHIELD_AZOTEQ_SOFLE_LEFT
 

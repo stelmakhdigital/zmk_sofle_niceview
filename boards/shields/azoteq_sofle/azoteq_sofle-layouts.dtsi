@@ -4,6 +4,7 @@
     azoteq_sofle_layout: azoteq_sofle_layout {
         compatible = "zmk,physical-layout";
         display-name = "Layout";
+        transform = <&default_transform>;
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0   37       0     0     0>
             , <&key_physical_attrs 100 100  100   37       0     0     0>

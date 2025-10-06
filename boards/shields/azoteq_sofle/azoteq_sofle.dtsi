@@ -6,16 +6,12 @@
 #include "azoteq_sofle-layouts.dtsi"
 #include "azoteq_sofle-pinctrl.dtsi"
 
-&azoteq_sofle_layout {
-    transform = <&default_transform>;
-};
 
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,physical-layout = &azoteq_sofle_layout;
         zmk,underglow = &led_strip;
-        zmk,battery = &vbatt;
+        zmk,physical-layout = &azoteq_sofle_layout;
     };
 
     default_transform: keymap_transform_0 {
@@ -32,6 +28,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
     };
 
     kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
         diode-direction = "col2row";
         row-gpios
@@ -57,11 +54,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
 		compatible = "zmk,keymap-sensors";
 		sensors = <&left_encoder>;
 	};
-
-    vbatt: vbatt {
-        compatible = "zmk,battery-nrf-vddh";
-        init-delay-ms = <50>;
-    };
 
 };
 

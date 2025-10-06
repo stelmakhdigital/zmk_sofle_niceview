@@ -9,3 +9,4 @@ zephyr
 modules
 build
 .DS_Store
+bootloader
