@@ -41,14 +41,24 @@ clear_build:
 	rm -rf build ${FIREWARE_DIR}
 
 _build_l:
-	west build -d build/left -s ${ZMK_APP_DIR} -b ${MAIN_BOARD} -- -DSHIELD="azoteq_sofle_left display_view_horizontal" -DZMK_CONFIG=${DZMK_CONFIG}
+	west build -d build/left -s ${ZMK_APP_DIR} -b ${MAIN_BOARD} -- \
+	-DSHIELD="azoteq_sofle_left nice_view_adapter nice_view_elemental" \
+	-DZMK_CONFIG=${DZMK_CONFIG}
 	mkdir -p ${FIREWARE_DIR}
 	cp build/left/zephyr/zmk.uf2 ${FIREWARE_DIR}/azoteq_sofle_left_${MAIN_BOARD}.uf2
 
 _build_r:
-	west build -d build/right -s ${ZMK_APP_DIR} -b ${MAIN_BOARD} -- -DSHIELD="azoteq_sofle_right display_view_horizontal azoteq_touchpad" -DZMK_CONFIG=${DZMK_CONFIG}
+	west build -d build/right -s ${ZMK_APP_DIR} -b ${MAIN_BOARD} -- \
+	-DSHIELD="azoteq_sofle_right nice_view_adapter nice_view_elemental azoteq_touchpad" \
+	-DZMK_CONFIG=${DZMK_CONFIG} \
+	-DEXTRA_CONF_FILE="config/prj_no_wpm.conf"
 	mkdir -p ${FIREWARE_DIR}
 	cp build/right/zephyr/zmk.uf2 ${FIREWARE_DIR}/azoteq_sofle_right_${MAIN_BOARD}.uf2
+
+_build_reset:
+	west build -d build/reset -s ${ZMK_APP_DIR} -b ${MAIN_BOARD} -- -DSHIELD="settings_reset" -DZMK_CONFIG=${DZMK_CONFIG}
+	mkdir -p ${FIREWARE_DIR}
+	cp build/reset/zephyr/zmk.uf2 ${FIREWARE_DIR}/azoteq_sofle_reset_${MAIN_BOARD}.uf2
 
 _clear_all:
 	clear
