@@ -14,3 +14,8 @@
         , <&pro_micro 19 GPIO_ACTIVE_HIGH>
         ;
 };
+
+// Явно отключаем энкодер на правой половине, освобождая пины D20 и D21
+&left_encoder {
+    status = "disabled";
+};

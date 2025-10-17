@@ -6,6 +6,9 @@ type: shield
 requires: [pro_micro]
 features:
   - keys
+  - displays
+  - rotary_encoder
+  - touchpad
 outputs:
   - usb
   - ble
