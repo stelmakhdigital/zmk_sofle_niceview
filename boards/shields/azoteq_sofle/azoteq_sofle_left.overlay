@@ -11,6 +11,20 @@
         ;
 };
 
-&left_encoder {
-    status = "okay";
+// Энкодер определяется только для левой половины
+/ {
+    left_encoder: encoder_left {
+        status = "okay";
+        compatible = "alps,ec11";
+        label = "LEFT_ENCODER";
+        resolution = <4>;
+        steps = <40>;
+        a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // D21 = P0.31
+        b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // D20 = P0.29
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+    };
 };
