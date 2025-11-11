@@ -2,6 +2,7 @@
 #include <dt-bindings/led/led.h>
 #include <zephyr/dt-bindings/i2c/i2c.h>
 #include <dt-bindings/pinctrl/nrf-pinctrl.h>
+#include <dt-bindings/gpio/gpio.h>
 
 #include "azoteq_sofle-layouts.dtsi"
 #include "azoteq_sofle-pinctrl.dtsi"
@@ -41,6 +42,46 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
     };
 
     // Sensors определяется только в левой половине вместе с энкодером
+
+    // Конфигурация тачпада - по умолчанию ОТКЛЮЧЕНА
+    tps43_input: tps43_input {
+        compatible = "zmk,input-listener";
+        device = <&tps43>;
+        status = "disabled";  // ОТКЛЮЧЕНО по умолчанию
+    };
+};
+
+// I2C конфигурация для тачпада - ОТКЛЮЧЕНА по умолчанию
+&i2c0 {
+    status = "disabled";  // ОТКЛЮЧЕНО по умолчанию
+    clock-frequency = <I2C_BITRATE_FAST>;
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    // Тачпад Azoteq IQS5xx - ОТКЛЮЧЕН по умолчанию
+    tps43: iqs5xx@74 {
+        status = "disabled";  // ОТКЛЮЧЕНО по умолчанию
+        compatible = "azoteq,iqs5xx";
+        reg = <0x74>;
+
+        one-finger-tap;
+        press-and-hold;
+        press-and-hold-time = <250>;
+        two-finger-tap;
+
+        scroll;
+        natural-scroll-y;
+        natural-scroll-x;
+
+        bottom-beta = <5>;
+        stationary-threshold = <5>;
+
+        flip-y;
+
+        rdy-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>;   // P0.31 (D21)
+        reset-gpios = <&gpio0 29 GPIO_ACTIVE_LOW>;  // P0.29 (D20)
+    };
 };
 
 &spi3 {

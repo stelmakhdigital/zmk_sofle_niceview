@@ -1,4 +1,5 @@
 #include "azoteq_sofle.dtsi"
+#include <dt-bindings/gpio/gpio.h>
 
 &kscan0 {
     col-gpios
@@ -18,9 +19,9 @@
         compatible = "alps,ec11";
         label = "LEFT_ENCODER";
         resolution = <4>;
-        steps = <40>;
-        a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // D21 = P0.31
-        b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // D20 = P0.29
+        steps = <80>;
+        a-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // D21 = P0.31
+        b-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // D20 = P0.29
     };
 
     sensors {

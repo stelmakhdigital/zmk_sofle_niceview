@@ -1,4 +1,9 @@
+#include <zephyr/dt-bindings/i2c/i2c.h>
+#include <dt-bindings/pinctrl/nrf-pinctrl.h>
+#include <dt-bindings/gpio/gpio.h>
+
 #include "azoteq_sofle.dtsi"
+#include "azoteq_sofle-pinctrl.dtsi"
 
 &default_transform {
     col-offset = <6>;
@@ -15,4 +20,15 @@
         ;
 };
 
-// Энкодер отсутствует на правой половине - пины D20 и D21 свободны для тачпада
+// ВКЛЮЧАЕМ тачпад только в правой половине
+&i2c0 {
+    status = "okay";  // ✅ ВКЛЮЧАЕМ I2C0
+};
+
+&tps43 {
+    status = "okay";  // ✅ ВКЛЮЧАЕМ тачпад
+};
+
+&tps43_input {
+    status = "okay";  // ✅ ВКЛЮЧАЕМ input listener
+};
