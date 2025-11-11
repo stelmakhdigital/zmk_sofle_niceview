@@ -1,3 +1,4 @@
+
 &pinctrl {
     spi1_default: spi1_default {
         group1 {
@@ -17,24 +18,10 @@
 };
 
 nice_view_spi: &spi1 {
-    status = "okay";
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi1_default>;
     pinctrl-1 = <&spi1_sleep>;
     pinctrl-names = "default", "sleep";
     cs-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
-
-    nice_view: ls0xx@0 {
-        compatible = "sharp,ls0xx";
-        spi-max-frequency = <1000000>;
-        reg = <0>;
-        width = <160>;
-        height = <68>;
-    };
 };
 
-/ {
-    chosen {
-        zephyr,display = &nice_view;
-    };
-};
